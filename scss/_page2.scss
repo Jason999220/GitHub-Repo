@@ -1,0 +1,240 @@
+.wrap2 {
+    // border: 1px solid goldenrod;
+    margin: 0 auto ;
+    max-width: 1263px; // 使得頁面自適應
+    position: relative;
+    // 設定吹喇吧
+    // background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner.svg'),url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner_sm.svg');
+    // background-repeat: no-repeat;
+    // background-position: right top;
+    // background-size: 885px 0px,100px 0px;
+    // 平板版
+    @media(max-width:768px){
+        .bg {
+            .ball-pink2 {
+                z-index: -1;
+                width: 200px;
+                height: 200px;
+                bottom: 903px;
+                left: -68px;
+                background-size: 200px 200px;
+            }
+            .top {
+                width: 50px;
+                height: 50px;
+                background-size: 50px 50px ;
+                // right: 16px;
+                // top: 526px;
+                .top-text {
+                    padding: 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    // 手機板
+    @media(max-width:576px){}
+    .header2 {
+        position: relative;
+        margin-bottom: 11px;
+        height: 559px;
+        // 標題
+        .header-text {
+            margin-top: 68px;
+            h2{
+                margin-bottom: 16px;
+                font-size: 48px;
+                text-align: left;
+            }
+        }
+        .header-bg {
+            width: 100%;
+            height: 470px;
+            background: #F7F9FD;
+            border-radius: 0px 0px 0px 300px;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+        }
+        .bg-img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+    @media(max-width:768px){
+        .header2 {
+            margin-bottom: 60px;
+            .header-title {
+                // width: 334px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 20px;
+                background: #FFFFFF;
+                border-bottom: 2px solid #FFD153;
+                .header-logo {
+                    width: 130px;
+                    height: 24px;
+                }
+            }        
+            // 改變文字的大小與位置
+            .header-text {
+                margin-top: 48px;
+                h2{
+                    font-size: 32px;
+                    padding-left: 20px;
+                }
+                p{
+                    padding-left: 20px;
+                }
+            }
+            .header-bg {
+                margin-top: 70px;
+                height: 495px;
+                // 新的小吹喇叭
+                background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner_sm.svg');
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                background-size: auto;
+                max-width: 100%;
+            }
+            .bg-img {
+                display: none;
+            }
+        }   
+    }
+    @media(max-width:576px){}
+    .main {
+        //人數的按鈕
+        .btn-person {
+            display: flex;
+            // justify-content: ;
+            margin: 0 auto;
+            max-width: 736px;
+            flex-wrap: wrap;
+            .person {
+                background: #FFFFFF;
+                border: 1px solid #56C4C5;
+                border-radius: 27px;
+                color: #56C4C5;
+                padding: 12px 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 8px 9px;
+                &:hover{
+                    color: #FFFFFF;
+                    background: #56C4C5;
+                    border: 1px solid #56C4C5;
+                }
+            }
+        }
+        .content {
+            // height: 100%;
+            margin-top: 54px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            // 基本版
+            .base {
+                margin: 0 auto;
+                // width: auto;
+                max-width: 444px;
+                background: #FFFFFF ;
+                box-shadow: 0px 2px 10px #00000014;
+                border-radius: 12px;
+                flex-wrap: wrap;
+                .content-title {
+                    padding: 16px 0px;
+                    text-align: center;
+                    border-bottom: 1px solid #DDDDDD;
+                }
+                .context-text {
+                    text-align: center;
+                    font-size: 16px;
+                    // margin: 32px auto;
+                    padding: 32px 48px;
+                    margin-bottom: 0px;
+                    font-weight: bolder;
+                }
+                .context-banner {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // margin: 0 auto;
+                    max-width: 396px;
+                    .box {
+                        max-width: 169px;
+                        padding: 20px 20px;
+                        background: #F5F5F5;
+                        border-radius: 12px;
+                        .number {
+                            color: $color-aqua;
+                        }
+                    }
+                }
+                .check {
+                    // width: 396px;
+                    margin: 32px auto;
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+    @media(max-width:768px){
+        .main {
+            margin-bottom: 60px;
+            .btn-person {
+                // flex-wrap: nowrap;
+                // overflow-x: auto;
+                .person {
+                    margin-bottom: 5px;
+                }
+            }
+            .content {
+                margin-top: 24px;
+                .base {
+                    margin: 24px auto 0px auto;
+                    width: 90%;
+                    .context-banner {
+                        .number {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width:576px){}
+    .question {
+        // width: 904px;
+        // height: 396px;
+        // border: 1px solid green;
+        // margin: 0px auto;
+        .question-box {
+            // width: 904px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FFFFFF;
+            box-shadow: 0px 2px 10px #00000014;
+            border-radius: 12px;
+            padding: 16px 32px;
+            &:hover {
+                color: #56C4C5;
+            }
+        }
+    }
+    @media(max-width:768px){
+        .question {
+            margin-bottom: 60px;
+            .question-box {
+                margin: 0 5px;
+            }
+        }
+    }
+    @media(max-width:576px){}
+}

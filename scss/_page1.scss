@@ -1,0 +1,394 @@
+// 練習 gap、max-width
+// 992px ipad版
+// 768px 平板版 
+// 567px 手機板
+// 通常外容器都使用 max-width 為了使自適應
+// 假如利用 flex 內容器的px就算大於外容器width，也會以容器px的比例 => 公益體驗營切版任務二攻略影片
+// 利用 flex-wrap:nowrap 使超出的資料不至下層，再利用 overflow-x : auto 增加戶動性 ，
+// opacity 設為 0 可有隱藏的情況
+
+
+
+
+.wrap {
+    // background: aliceblue; // 最後撤掉
+    margin: 0 auto ;
+    max-width: 1366px; // 使得頁面自適應
+    border: 1px solid saddlebrown;
+    position: relative;
+    //背景 bg-home、home
+    .background-image {
+        position: absolute;
+        right: 0;
+    }
+    @media(max-width:768px){
+        .bg {
+            .top {
+                width: 50px;
+                height: 50px;
+                background-size: 50px 50px ;
+                .top-text {
+                    padding: 10px;
+                    font-size: 14px;
+                }
+            }
+            .ball-blue {
+                width: 0;
+            }
+            .ball-aqua {
+                background-size: 176px 135px;
+                // top: 500px;
+                right: 5%;
+                height: 0;
+            }
+            .ball-pink1 {
+                height: 0;
+            }
+            .background-image {
+                height: 0;
+            }
+        }
+    }
+    .header {
+        height: 100vh; // 1個版面的大小
+        max-width: 1088px;
+        padding: 24px 32px;
+        position: relative;
+        .header-text {
+            // margin-top: 188px;
+            padding-top: 188px;
+            width: 100%;
+            // margin: 0 auto;
+            .text1 {
+                // width: 262px;
+                height: 26px;
+                color: #56C4C5;
+                font-size: 18px;
+            }
+            .text2 {
+                // width: 432px;
+                height: 140px;
+                color: #221E1F;
+                font-size: 48px;
+            }
+            .text3 {
+                // width: 451px;
+                height: 29px;
+                color: #221E1F;
+                font-size: 20px;
+            }
+        }
+        .home {
+            width: 532px;
+            height: 534px;
+            // height: 80%;
+            // width: 80%;
+            position: absolute;
+            top: 25px;
+            right: 10px;
+        }
+        .background-image-sm {
+            display: none;
+        }
+    }
+    @media(max-width:768px) {
+        .header {
+            height: auto;
+            padding-bottom: 0;
+            margin-bottom: 100px;
+            .header-title {
+                padding: 16px 20px;
+                border-bottom: 2px solid #FFD153;
+                .header-logo {
+                    width: 130px;
+                    height: 24px;
+                }
+            }
+            .header-text {
+                padding-top: 0;
+                margin-top: 32px;
+            }
+            .home {
+                position: relative;
+                margin: 0 auto;
+            }
+            .background-image-sm {
+                height: 80%;
+                width: 80%;
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                left: 10%;
+                top: 38% ;
+            }
+        }
+    }
+    .media {
+        // width: 969px;
+        // border: 1px solid #8887;
+        margin: 100px auto;
+        .media-cards {
+            display: flex;
+            // justify-content: space-between;
+            flex-wrap: wrap;
+            .media-card {
+                // width: 244px;
+                // height: 221px;
+                width: 30%;
+                // border: 1px solid #882;
+                text-align: center;
+                margin-left: 16px;
+                .text {
+                    color: $text;
+                }
+            }
+        }
+    }
+    @media(max-width:768px) {
+        .media {
+            margin-bottom: 60px;
+            .media-cards {
+                width: 350px;
+                margin: 0 auto;
+                .media-card {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-bottom: 32px;
+                }
+            }
+        }
+    }
+    .char {
+        margin-bottom: 100px;
+        // border: 1px solid black;
+        .char-text {
+            font-size: 20px;
+            text-align: center;
+        }
+        .char-cards{
+            display: flex; // 使此內容器並排
+            // padding-right: -16px; 
+            flex-wrap: wrap; // 這層寬度不足時會延伸至下一層
+            margin: 0 auto;
+            .char-card {
+                width: 24%; // 每一個item都佔25%
+                background: #FFFFFF; // 設計稿給
+                box-shadow: 0px 2px 10px #00000014; // 設計稿給
+                padding-right: 16px; // 每個item間距
+                text-align: center; // 字型居中
+                border-radius: 12px; // 製造圓弧效果
+                .char-img {
+                    border-radius: 12px; // 製造圓弧效果
+                }
+            }
+        }
+    }
+    @media(max-width:992px) {
+        .char {
+            .char-cards {
+                .char-card {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    @media(max-width:768px) {
+        .char {
+            .char-cards {
+                .char-card {
+                    width: 80%;
+                    padding-right: 0;
+                    margin: 0 auto;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+    .state {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        .state-card {
+            width: 61%;
+            display: flex;
+            flex-wrap: wrap;
+            .box {
+                // border: 1px solid hotpink;
+                width: 36%;
+                height: 280px;
+                // border: 1px solid saddlebrown;
+                background: #FFFFFF;
+                box-shadow: 0px 2px 10px #00000014;
+                border-radius: 12px;
+                margin-bottom: 28px;
+                margin-right: 42px;
+                .box-img {
+                    width: 60px;
+                    height: 60px;
+                    // padding: 49px 127px 25px 51px;
+                    margin: 49px 127px 25px 51px;
+                    box-shadow: 0px 2px 10px #00000014;
+                    background: #FFFFFF;
+                    border-radius: 19% 
+                }
+                .box-text1 {
+                    // width: 90px;
+                    // height: 26px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 24px 0px 16px 32px;
+                }
+                .box-text2 {
+                    text-align: left;
+                    // width: 166px;
+                    // height: 48px;
+                    padding: 16px 32px 48px 32px;
+                }
+            }
+        }
+        .state-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 400px;
+            // height: 260px;
+            h2{
+                text-align: left;
+                margin-bottom: 0px;
+            }
+            p {
+                font-size:18px;
+            }
+        }
+    }
+    @media(max-width:768px){
+        .state {
+            flex-direction: column-reverse; // 印設計稿須把box-text移至上面
+            .state-card {
+                margin: 0 auto;
+                .box {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .box-img {
+                    margin: 0;
+                }
+                }
+            }
+            .state-text {
+                margin: 0 auto;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 32px;
+                h2 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .comment {
+        // height: 432px;
+        .comment-cards {
+            display: flex;
+            flex-wrap: wrap;
+            // margin-left: -16px;
+            // margin-right: -16px;
+            .comment-card {
+                // height: 304px; // 先暫時寫死高度在調整
+                // padding: 0 16px;
+                margin: 0 16px;
+                position: relative; // 對應內容器的absolute
+                width: 29%; 
+                .head {
+                    width: 80px;
+                    height: 80px;
+                    position: absolute; // 使照片隨意移動
+                    left: 32px; // 呼應於absolute移動位置
+                    border-radius: 50% // 將正方形把變圓弧效果
+                }
+                .comment-card-text-bg {
+                    height: 248px;
+                    margin-top: 56px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 2px 10px #00000014;
+                    border-radius: 12px;
+                }
+            }
+        }
+        .pages {
+            width: 70px;
+            margin: 0 auto;
+            margin-top: 24px;
+            // margin-right: -8px;
+            display: flex;
+            justify-content: space-between;
+            .page {
+                // width: 10%;
+                // height: 10px;
+                background: #DDDDDD;
+                border-radius: 50px;
+                // margin-right: 8px;
+                padding: 5px 5px;
+                &:hover {
+                    width: 16px;
+                    border-radius: 50px;
+                    background: #FFD153 ;
+                }
+            }
+        }
+    }
+    @media(max-width:768px) {
+        .comment {
+            max-width: 335px;
+            .comment-cards {
+                margin-top: -24px;
+                // flex-wrap: nowrap;
+                // overflow-x: auto; // 使其可以左右調整
+                .comment-card {
+                    width: 100%;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+    .footer {
+        // 設置區域
+        height: 504px;
+        margin-top: 100px;
+        // 背景圖片
+        background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/home_footer.svg');
+        background-repeat: no-repeat; // 不重複
+        background-size: cover; // 使滿版
+        background-position: center;
+        position: relative; // 使內容器隨意擺放
+        h2 {
+            // margin: 0 auto;
+            // padding-top: 264px;
+            position: absolute; // 調整位置
+            top: 65%;
+            left: 35%;
+        }
+        .payBtn2 {
+            // margin: 0 auto;
+            // margin-top: 48px;
+            position: absolute; // 調整位置
+            top: 80%;
+            left: 45%;
+        }
+    }
+    @media(max-width:768px) {
+        .footer {
+            height: 461px;
+            margin-top: 60px;
+            h2 {
+                left: 23%;
+            }
+            .payBtn2 {
+                left: 42%;
+            }
+        }
+    }
+}
+
